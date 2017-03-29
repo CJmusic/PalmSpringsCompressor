@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Palm Springs Compressor (AU).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Palm Springs Compressor (All).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Palm Springs Compressor (Shared Code).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Palm Springs Compressor (VST).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>27CE16F4CAB18BA331FAFE69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>36EE66F46A99BAED15C87B7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7765F248346956178061C879</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA20E3075DEA0029E781B999</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
