@@ -2,11 +2,9 @@ import soundfile as sf
 import matplotlib.pyplot as plt 
 import numpy as np
 
-file1 = '440.wav'#'0002 7-Audio.aif'
-file2 = '0004 7-Audio.aif'#'440.wav'
+file = '440.wav'#'0002 7-Audio.aif'
 
-INPUT1, fs = sf.read(file1)
-INPUT2, fs = sf.read(file2)
+INPUT, fs = sf.read(file)
 
 
 OUTPUT=[]
@@ -29,13 +27,10 @@ numSamples = 0
 attack = False
 wet = 0.0
 
-count = 0
-attacks=0
-while numSamples < len(INPUT2):
-	count += 1
+while numSamples < len(INPUT):
 
-	x_L = INPUT2[numSamples][0]
-	x_R = INPUT2[numSamples][1]
+	x_L = INPUT[numSamples][0]
+	x_R = INPUT[numSamples][1]
 
 	x_LdB = 20.0*np.log10(abs(x_L))
 	x_RdB = 20.0*np.log10(abs(x_R))
@@ -73,8 +68,6 @@ while numSamples < len(INPUT2):
 		t_rel = 0
 
 
-
-
 	wet_LdB = Threshold + (x_LdB - Threshold)/Ratio
 	wet_RdB = Threshold + (x_RdB - Threshold)/Ratio
 
@@ -89,26 +82,23 @@ while numSamples < len(INPUT2):
 	OUTPUT.append(y_L)
 	WET.append(wet/2.0)
 	THRESHOLD.append(10**(Threshold/20.0))
-	# THRESHOLD.append(-10**(Threshold/20.0))
 
 	numSamples += 1
 
 
 INPUT =[]
-for i in xrange(len(INPUT2)):
-	INPUT.append(INPUT2[i][0])
+for i in xrange(len(INPUT)):
+	INPUT.append(INPUT[i][0])
 
 THRESHOLD = np.asarray(THRESHOLD)
 
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
-# fig.subplot(2,1,1)
 plt.plot(INPUT,'0.75', label = "Input")
 plt.plot(OUTPUT, 'k', label = "Output")
 plt.plot(WET,'c', label = "Amt of Comp/2")
 plt.plot(THRESHOLD,'r', label = "Threshold")
 plt.plot(-THRESHOLD,'r')
 plt.legend()
-# plt.plot(x)
-plt.show()
+gplt.show()
 sf.write('440_12_2.wav', OUTPUT ,fs)
